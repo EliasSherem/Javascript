@@ -1,0 +1,23 @@
+1. 
+    a)Javascript fue creado para hacer la web interactiva
+    b)Lo creo Brendan Eich en 10 dias
+2.
+    a)Es un lenguaje interpretado, no compilado
+    b)Es débilmente tipado
+    c)Es compatible con múltiples navegadores
+3.
+    b)console.log imprime un mensaje directo en la consola y alert despliega un banner donde se envia un mensaje 
+4.
+    a)ECMAScript es un estándar de scripting en el que se basan lenguajes como JavaScript.
+    b)Es importante porque define las especificaciones que aseguran la interoperabilidad y consistencia entre diferentes implementaciones de JavaScript.
+5.
+    a)Cambia el fondo de la pantalla a lightblue
+    b)Agrega el una etiqueta h1 en la pantalla
+6.
+    a)la primer linea declara e inicializa la variable saludo con el valor string Hola a todos
+    b)imprime la variable saludo despues la modificas con el valor de Adios, Hasta pronto y finalmente la vuelve a imprimir
+7.
+    a)Un motor de JavaScript es un programa o intérprete que ejecuta el código JavaScript.
+    b) Algunos motores de JavaScript son V8 (utilizado en Google Chrome y Node.js) y SpiderMonkey (utilizado en Mozilla Firefox).
+8.
+    a)es muy importante que Javascript sea eficiente en todos los navegadores ya que aproximadamente el 90% de la web se basa en javascript.
