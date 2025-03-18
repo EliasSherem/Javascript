@@ -1,0 +1,10 @@
+let numInt = 26;
+let numFloat = 26.5;
+let string = "Hola";
+let boolean = true;
+let empty = null;
+console.log(numInt);
+console.log(numFloat);
+console.log(string);
+console.log(boolean);
+console.log(empty);
