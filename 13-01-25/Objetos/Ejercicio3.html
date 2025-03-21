@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Número y Color</title>
+    <style>
+        #numero {
+            font-size: 2em;
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid black;
+            display: inline-block;
+            min-width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="numero"></div>
+    <script>
+        window.onload = function() {
+            let numero = prompt("Ingrese un número:");
+            numero = parseInt(numero);
+            let div = document.getElementById("numero");
+            
+            if (!isNaN(numero)) {
+                div.textContent = numero;
+                if (numero < 100) {
+                    div.style.backgroundColor = "green";
+                } else if (numero >= 100 && numero <= 200) {
+                    div.style.backgroundColor = "yellow";
+                } else {
+                    div.style.backgroundColor = "red";
+                }
+            } else {
+                div.textContent = "Valor inválido";
+            }
+        };
+    </script>
+</body>
+</html>

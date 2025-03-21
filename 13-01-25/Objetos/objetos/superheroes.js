@@ -264,6 +264,7 @@ let letraApellido = {
   },
 };
 
+
 let fechaNacimiento = {
   num0: {
     numero: 0,
@@ -316,3 +317,18 @@ let fechaNacimiento = {
     femenino: "de otro planeta",
   },
 };
+
+
+
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const prompt = require('prompt-sync')();
+let nombre = prompt("Ingrese su nombre: ");
+let apellido = prompt("Ingrese su apellido: ");
+let fecha = prompt("Ingrese su Año de nacimiento: ");
+let genero = prompt("Ingrese su genero (masculino o femenino): ");
+let lN = nombre[0];
+let lA = apellido[0];
+let lF = fecha[3];
+let superHeroe = `${letraNombre.lN} ${letraApellido.lA} ${fechaNacimiento.lF}`;
+console.log(superHeroe);
