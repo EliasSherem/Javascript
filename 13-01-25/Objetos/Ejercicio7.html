@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planets Info</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f9;
+    }
+    .container {
+      text-align: center;
+    }
+    .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .card h2 {
+      margin: 10px 0;
+    }
+    .card p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Planets Information</h1>
+    <p>Enter the names of three planets (e.g., mercurio, venus, tierra):</p>
+    <input type="text" id="planet1" placeholder="Planet 1">
+    <input type="text" id="planet2" placeholder="Planet 2">
+    <input type="text" id="planet3" placeholder="Planet 3">
+    <button onclick="displayPlanets()">Show Planets</button>
+    <div id="cards" class="cards"></div>
+  </div>
+
+  <script>
+    const sistemaSolar = {
+      mercurio: {
+        nombre: "mercurio",
+        color: "gris",
+        temperatura: 350,
+        imagen: "https://www.astromia.com/fotosolar/fotos/planetamercurio.jpg",
+      },
+      venus: {
+        nombre: "venus",
+        color: "blanco",
+        temperatura: 460,
+        imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Venus-real_color.jpg/220px-Venus-real_color.jpg",
+      },
+      tierra: {
+        nombre: "tierra",
+        color: "morado",
+        temperatura: 14,
+        imagen: "https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/5a0ab2a75bafe87f4d3f9a63/acaba-tiempo_0.jpg",
+      },
+      marte: {
+        nombre: "marte",
+        color: "rojo",
+        temperatura: -46,
+        imagen: "https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/55365b6b34099b0279c8fb2e/slide-marte.jpg",
+      },
+      jupiter: {
+        nombre: "jupiter",
+        color: "marrón",
+        temperatura: -121,
+        imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Jupiter_by_Cassini-Huygens.jpg/280px-Jupiter_by_Cassini-Huygens.jpg",
+      },
+      saturno: {
+        nombre: "saturno",
+        color: "amarillo",
+        temperatura: -130,
+        imagen: "https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/558d2b15010e26221b57df75/saturno.jpg",
+      },
+      urano: {
+        nombre: "urano",
+        color: "azul",
+        temperatura: -205,
+        imagen: "http://www.manzanares.es/v2/sites/paseo/img/urano/urano1.jpg",
+      },
+      neptuno: {
+        nombre: "neptuno",
+        color: "azul",
+        temperatura: -220,
+        imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Neptune_Full.jpg/280px-Neptune_Full.jpg",
+      },
+      pluton: {
+        nombre: "plutón",
+        color: "blanco",
+        temperatura: -229,
+        imagen: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Nh-pluto-in-true-color_2x_JPEG.jpg/1200px-Nh-pluto-in-true-color_2x_JPEG.jpg",
+      },
+    };
+
+    function displayPlanets() {
+      const planet1 = document.getElementById("planet1").value.toLowerCase();
+      const planet2 = document.getElementById("planet2").value.toLowerCase();
+      const planet3 = document.getElementById("planet3").value.toLowerCase();
+      const cardsDiv = document.getElementById("cards");
+
+      // Clear previous results
+      cardsDiv.innerHTML = "";
+
+      // Get the planets
+      const planets = [planet1, planet2, planet3];
+      planets.forEach((planet) => {
+        if (sistemaSolar[planet]) {
+          const planetData = sistemaSolar[planet];
+          const card = `
+            <div class="card">
+              <h1>${planetData.nombre}</h1>
+              <img src="${planetData.imagen}" alt="${planetData.nombre}">
+              <p><strong>Color:</strong> ${planetData.color}</p>
+              <p><strong>Temperature:</strong> ${planetData.temperatura}°C</p>
+            </div>
+          `;
+          cardsDiv.innerHTML += card;
+        } else {
+          cardsDiv.innerHTML += `
+            <div class="card">
+              <h2>Planet not found</h2>
+              <p>The planet "${planet}" does not exist in the solar system data.</p>
+            </div>
+          `;
+        }
+      });
+    }
+  </script>
+</body>
+</html>
