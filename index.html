@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div id="patata"></div>
+        <script>
+            /*const patata = document.getElementById("patata")
+            //const patata = document.querySelector(".texto")
+            const nuevoElemento = document.createElement("p")//crear elementos no los inserta en el DOM
+            nuevoElemento.textContent = "Hola mundo"
+            patata.appendChild(nuevoElemento)
+            console.log(nuevoElemento)*/
+            const patata = document.getElementById("patata")
+            patata.innerHTML = `
+                <p>Hola 
+                    <strong> MUNDO</strong>
+                </p>`
+        </script>
+    </body>
+</html>
