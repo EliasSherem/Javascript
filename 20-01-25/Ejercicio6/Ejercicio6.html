@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div id="content">
+            <form id="formulario">
+                <label for="num1">numero 1: </label>
+                <input type="number" id="num1" required>
+                <label for="num2">numero 2: </label>
+                <input type="number" id="num2" required>
+                <label for="operacion">Escribe que operacion quieres hacer: </label>
+                <input type="text" id="operacion" required>
+                <button type="button" onclick="eval()">Calcular</button>
+            </form>
+            <div id="resultados"></div>
+        </div>
+        <script>
+            function eval(){
+                const num1 = parseInt(document.getElementById("num1").value);
+                const num2 = parseInt(document.getElementById("num2").value);
+                const operacion = document.getElementById("operacion").value;
+                const resultado = document.getElementById("resultados");
+                let result = 0
+                switch(operacion){
+                    case "suma" || "Suma":
+                        result = num1 + num2
+                    break;
+                    case "resta" || "Resta":
+                        result = num1-num2
+                    break;
+                    case "multiplicacion" || "Multiplicacion": 
+                        result = num1*num2
+                    break;
+                    case "division" || "Division": 
+                        result = num1/num2
+                    break;
+                    case "modulo" || "Modulo" || "resto" || "Resto": 
+                        result = num1 % num2
+                    break;
+                    default:
+                        result = "Ingresa una operacion valida"
+                    break;
+                }
+                resultados.innerHTML = `
+                <p> el resultado de la ${operacion} es igual a ${result}</p>`
+            }
+        </script>
+    </body>
+</html>
