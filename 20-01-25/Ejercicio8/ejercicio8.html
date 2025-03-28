@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler de Coches</title>
+</head>
+<body>
+    <h1>Programa de Alquiler de Coches</h1>
+    <form id="alquilerForm">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required><br><br>
+
+        <label for="tieneCarnet">¿Tienes carnet de conducir?</label>
+        <select id="tieneCarnet" name="tieneCarnet" required>
+            <option value="sí">Sí</option>
+            <option value="no">No</option>
+        </select><br><br>
+
+        <div id="datosCliente" style="display: none;">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required><br><br>
+
+            <label for="ciudad">Ciudad de recogida:</label>
+            <input type="text" id="ciudad" name="ciudad" required><br><br>
+
+            <label for="dias">Días de alquiler:</label>
+            <input type="number" id="dias" name="dias" required><br><br>
+        </div>
+
+        <button type="button" id="submitButton">Enviar</button>
+    </form>
+
+    <div id="resultado" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <script>
+        const form = document.getElementById('alquilerForm');
+        const datosCliente = document.getElementById('datosCliente');
+        const submitButton = document.getElementById('submitButton');
+        const resultado = document.getElementById('resultado');
+
+        submitButton.addEventListener('click', () => {
+            const edad = parseInt(document.getElementById('edad').value);
+            const tieneCarnet = document.getElementById('tieneCarnet').value;
+
+            if (edad < 18) {
+                resultado.innerHTML = "Lo sentimos, no puedes alquilar un vehículo porque eres menor de edad.";
+            } else if (tieneCarnet !== "sí") {
+                resultado.innerHTML = "Lo sentimos, no puedes alquilar un vehículo porque no tienes carnet de conducir.";
+            } else {
+                datosCliente.style.display = 'block';
+
+                const nombre = document.getElementById('nombre').value;
+                const apellido = document.getElementById('apellido').value;
+                const ciudad = document.getElementById('ciudad').value;
+                const dias = parseInt(document.getElementById('dias').value);
+
+                if (nombre && apellido && ciudad && dias) {
+                    let costeTotal;
+                    if (dias >= 7) {
+                        costeTotal = Math.floor(dias / 7) * 150 + (dias % 7) * 25;
+                    } else {
+                        costeTotal = dias * 25;
+                    }
+
+                    resultado.innerHTML = `
+                        <p>Datos del cliente:</p>
+                        <p>Nombre: ${nombre} ${apellido}</p>
+                        <p>Ciudad de recogida: ${ciudad}</p>
+                        <p>Días de alquiler: ${dias}</p>
+                        <p>Coste total: ${costeTotal} euros</p>
+                    `;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
