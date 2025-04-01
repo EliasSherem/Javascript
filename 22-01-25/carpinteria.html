@@ -13,29 +13,38 @@
             <img src="sources/logo.svg" alt="Logo Mazarredo" id="logo" height="5%" width="5%">
             <h1 id="titulo">Carpinteria Mazarredo</h1>
         </div>
-        <div id="brocha" class="card">
-            <h2>brocha</h2>
-            <p>$100</p>
-            <button class="btn" id="btnBrocha">agregar</button>
-            <button class="btn" id="btnBrochaEliminar">eliminar</button>
+        <div class="cards-container">
+            <div id="brocha" class="card">
+                <h2>brocha</h2>
+                <p>$100</p>
+                <button class="btn" id="btnBrocha" onclick="suma('brocha')">agregar</button>
+                <button class="btn" id="btnBrochaEliminar" onclick="resta('brocha')">eliminar</button>
+            </div>
+            <div id="llave" class="card">
+                <h2>llave</h2>
+                <p>$200</p>
+                <button class="btn" id="btnLlave" onclick="suma('llave')">agregar</button>
+                <button class="btn" id="btnLlaveEliminar" onclick="resta('llave')">eliminar</button>
+            </div>
+            <div id="martillo" class="card">
+                <h2>martillo</h2>
+                <p>$300</p>
+                <button class="btn" id="btnMartillo" onclick="suma('martillo')">agregar</button>
+                <button class="btn" id="btnMartilloEliminar" onclick="resta('martillo')">eliminar</button>
+            </div>
+            <div id="tronco" class="card">
+                <h2>tronco</h2>
+                <p>$400</p>
+                <button class="btn" id="btnTronco" onclick="suma('tronco')">agregar</button>
+                <button class="btn" id="btnTroncoEliminar" onclick="resta('tronco')">eliminar</button>
+            </div>
         </div>
-        <div id="llave" class="card">
-            <h2>llave</h2>
-            <p>$200</p>
-            <button class="btn" id="btnLlave">agregar</button>
-            <button class="btn" id="btnLlaveEliminar">eliminar</button>
-        </div>
-        <div id="martillo" class="card">
-            <h2>martillo</h2>
-            <p>$300</p>
-            <button class="btn" id="btnMartillo">agregar</button>
-            <button class="btn" id="btnMartilloEliminar">eliminar</button>
-        </div>
-        <div id="tronco" class="card">
-            <h2>tronco</h2>
-            <p>$400</p>
-            <button class="btn" id="btnTronco">agregar</button>
-            <button class="btn" id="btnTroncoEliminar">eliminar</button>
+        <div class="cards-container">
+            <div id="cart" class="card">
+                <h2>carrito</h2>
+            </div>
+
+                
         </div>
         <script src="carpinteria.js"></script>
     </body>
