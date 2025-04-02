@@ -1,8 +1,4 @@
-// fetch("gutendex.com/books/?page=2")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     imprimir(data);
-//   });
+
 
 function imprimir(datos) {
 
@@ -21,6 +17,6 @@ function imprimir(datos) {
 }
 
 
-let objeto = fetch("https://gutendex.com/books/")
+fetch("https://gutendex.com/books/")
 .then((res)=> res.json())
   .then((data) => {imprimir(data);})
